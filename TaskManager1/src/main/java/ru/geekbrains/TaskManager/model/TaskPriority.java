@@ -1,2 +1,11 @@
-package ru.geekbrains.TaskManager.model;public enum TaskPriority {
+package ru.geekbrains.TaskManager.model;
+
+import lombok.Getter;
+
+@Getter
+public enum TaskPriority {
+    LOW,
+    MEDIUM,
+    HIGH
+
 }
