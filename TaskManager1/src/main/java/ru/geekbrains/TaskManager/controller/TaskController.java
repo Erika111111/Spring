@@ -34,6 +34,7 @@ public class TaskController {
      * @return
      */
     @PostMapping
+
     public Task addTask(@RequestBody Task task){
 
         return taskService.addTask(task);
@@ -45,6 +46,7 @@ public class TaskController {
      * @return
      */
     @GetMapping("/status/{status}")
+    @ResponseBody
     public List<Task> getTasksByStatus(@PathVariable TaskStatus status){
         return taskService.getTasksByStatus(status);
     }
@@ -56,6 +58,7 @@ public class TaskController {
      * @return
      */
     @PutMapping("/{id}")
+    @ResponseBody
     public Task updateTaskStatus(@PathVariable Long id, @RequestBody Task task){
         TaskStatus newTaskStatus = task.getStatus();
         return taskService.updateTaskStatus(id);
@@ -66,6 +69,7 @@ public class TaskController {
      * @param id
      */
     @DeleteMapping("/{id}")
+    @ResponseBody
     public void deleteTask(@PathVariable Long id){
         taskService.deleteTask(id);
     }
